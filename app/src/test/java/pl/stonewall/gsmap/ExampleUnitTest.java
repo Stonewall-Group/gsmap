@@ -1,4 +1,4 @@
-package pl.stonewall.gsmap.gsmap;
+package pl.stonewall.gsmap;
 
 import org.junit.Test;
 

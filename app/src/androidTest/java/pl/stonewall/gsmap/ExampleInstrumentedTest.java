@@ -1,4 +1,4 @@
-package pl.stonewall.gsmap.gsmap;
+package pl.stonewall.gsmap;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
