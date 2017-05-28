@@ -11,11 +11,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.text.TextUtils;
 
 public class PlacesProvider extends ContentProvider {
-    /*
-    static final String PROVIDER_NAME = "pl.stonewall.gsmap.PlacesProvider";
-    static final String URL = "content://" + PROVIDER_NAME + "/placess";
-    static final Uri CONTENT_URI = Uri.parse(URL);
-*/
+
     private static final int PLACES = 1;
     private static final int PLACE_ID = 2;
 
@@ -52,8 +48,17 @@ public class PlacesProvider extends ContentProvider {
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        // TODO: Implement this to handle requests to insert a new row.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        long id = 0;
+        switch (uriMatcher.match(uri)) {
+            case PLACES:
+                id = db.replace(PlacesProviderContract.Places.TABLE_NAME, null, values);
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown URI: " + uri);
+        }
+        getContext().getContentResolver().notifyChange(uri, null);
+        return Uri.withAppendedPath(PlacesProviderContract.Places.CONTENT_URI, Long.toString(id));
     }
 
     @Override

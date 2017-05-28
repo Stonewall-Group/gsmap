@@ -29,6 +29,7 @@ public class PlacesProviderContract {
         /**
          * The column descriptions.
          */
+        public static final String _ID = "nr";
         public static final String TABLE_NAME = "places";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_DESCRIPTION = "description";

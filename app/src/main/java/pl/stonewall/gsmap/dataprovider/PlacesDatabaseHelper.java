@@ -20,8 +20,8 @@ class PlacesDatabaseHelper extends SQLiteOpenHelper {
                     PlacesProviderContract.Places._ID + " INTEGER PRIMARY KEY, " +
                     PlacesProviderContract.Places.COLUMN_NAME + " TEXT NOT NULL, " +
                     PlacesProviderContract.Places.COLUMN_DESCRIPTION + " TEXT," +
-                    PlacesProviderContract.Places.COLUMN_LOGO + " BLOB," +
-                    PlacesProviderContract.Places.COLUMN_IMAGE + " BLOB," +
+                    PlacesProviderContract.Places.COLUMN_LOGO + " TEXT," +
+                    PlacesProviderContract.Places.COLUMN_IMAGE + " TEXT," +
                     PlacesProviderContract.Places.COLUMN_LATITUDE + " REAL," +
                     PlacesProviderContract.Places.COLUMN_LONGITUDE + " REAL," +
                     PlacesProviderContract.Places.COLUMN_CATEGORY + " TEXT," +
